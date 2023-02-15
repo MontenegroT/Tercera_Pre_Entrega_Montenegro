@@ -4,8 +4,8 @@ from appproyecto import views
 
 urlpatterns = [
     path('', views.inicio),
-    path('Curso/', views.curso),
-    path('Profesores/', views.profesores),
-    path('Alumnos/', views.actividades),
-    path('Actividades/', views.actividades),
+    path('curso/', views.curso),
+    path('profesores/', views.profesores),
+    path('alumnos/', views.actividades),
+    path('actividades/', views.actividades),
 ]
