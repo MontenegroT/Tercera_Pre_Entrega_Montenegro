@@ -19,4 +19,11 @@ class Alumnos(models.Model):
      correo=models.EmailField()
      cursos_inscripto=models.IntegerField()
 
+class Actividades():
+    tipo=models.CharField(max_length=30)
+    fecha_inicio=models.IntegerField()
+    fecha_entrega=models.IntegerField()
+    entrega=models.BooleanField()
+    
+
 
