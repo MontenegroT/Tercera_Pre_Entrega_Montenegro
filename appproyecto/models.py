@@ -15,6 +15,7 @@ class Profesores(models.Model):
 
 class Alumnos(models.Model):
      nombre=models.CharField(max_length=30)
+     documento=models.IntegerField()
      correo=models.EmailField()
      cursos_inscripto=models.IntegerField()
 
