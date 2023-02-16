@@ -5,6 +5,7 @@ from django.db import models
 class Curso(models.Model):
     nombre=models.CharField(max_length=30)
     turno=models.CharField(max_length=30)
+    comision=models.IntegerField()
     duracion=models.IntegerField()
 
 class Profesores(models.Model):
