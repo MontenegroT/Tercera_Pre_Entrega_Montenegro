@@ -14,10 +14,15 @@ def profesores(request):
     #return HttpResponse(" vista de las profesores")
     return render(request,'appproyecto/profesores.html')
 
-def Alumnos(request):
+def alumnos(request):
+
     #return HttpResponse(" vista de las Alumnos ")
     return render(request,'appproyecto/alumnos.html')
 
 def actividades(request):
     #return HttpResponse(" vista de las actividades ")
-    return render(request,'appproyecto/avtividades.html')
+    return render(request,'appproyecto/actividades.html')
+
+def CursoFormulario(request):
+    #return HttpResponse(" vista de las actividades ")
+    return render(request,'appproyecto/CursoFormulario.html')
