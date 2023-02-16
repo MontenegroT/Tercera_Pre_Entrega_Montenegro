@@ -30,7 +30,6 @@ def cursoFormulario(request):
             return render(request,'appproyecto/Inicio.html')
     else:
         miFormulario = CursoFormulario()
-
     return render(request,'appproyecto/cursoFormulario.html', {"miFormulario":miFormulario})
 
 def profesoresform(request):
@@ -39,10 +38,35 @@ def profesoresform(request):
         print(miFormulario)
         if miFormulario.is_valid:
             datos = miFormulario.cleaned_data
-            profesor=Profesores( nombre=datos['nombnre'], correo=datos['correo'], profesion=datos['profesion'], comisioncursos_asignados=datos['cursos_asignados'])
+            profesor=Profesores( nombre=datos['nombre'], correo=datos['correo'], profesion=datos['profesion'], cursos_asignados=datos['cursos_asignados'])
             profesor.save()
             return render(request,'appproyecto/Inicio.html')
     else:
         miFormulario = ProfesoresForm()
-
     return render(request,'appproyecto/profesoresform.html', {"miFormulario":miFormulario})
+
+def alumnosform(request):
+    if request.method == 'POST':
+        miFormulario = AlumnosForm(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            informacion = miFormulario.cleaned_data
+            alumnos=Alumnos( nombre=informacion['nombre'], correo=informacion['correo'], cursos_inscripto=informacion['cursos_inscripto'], documento=informacion['documento'])
+            alumnos.save()
+            return render(request,'appproyecto/Inicio.html')
+    else:
+        miFormulario = AlumnosForm()
+    return render(request,'appproyecto/alumnosform.html', {"miFormulario":miFormulario})
+
+def actividadform(request):
+    if request.method == 'POST':
+        miFormulario = ActividadForm(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            informacion = miFormulario.cleaned_data
+            actividad=Actividades( tipo=informacion['tipo'], fecha_inicio=informacion['fecha_inicio'], fecha_entrega=informacion['fecha_entrega'], entrega=informacion['entrega'])
+            actividad.save()
+            return render(request,'appproyecto/Inicio.html')
+    else:
+        miFormulario = ActividadForm()
+    return render(request,'appproyecto/actividadesform.html', {"miFormulario":miFormulario})

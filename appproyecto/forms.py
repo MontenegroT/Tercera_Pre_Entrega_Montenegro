@@ -12,7 +12,7 @@ class ProfesoresForm(forms.Form):
     profesion=forms.CharField(max_length=30)
     cursos_asignados=forms.IntegerField()
 
-class AlumnoForm(forms.Form):
+class AlumnosForm(forms.Form):
      nombre=forms.CharField(max_length=30)
      documento=forms.IntegerField()
      correo=forms.EmailField()
