@@ -70,3 +70,17 @@ def actividadform(request):
     else:
         miFormulario = ActividadForm()
     return render(request,'appproyecto/actividadesform.html', {"miFormulario":miFormulario})
+
+def buscarInfo(request):
+    return render(request, "appproyecto/buscarinformacion.html")
+
+def buscar(request):
+    if request.GET["comision"]:
+        comision = request.GET['comision']
+        cursos = Curso.objects.filter(comision__icontains=comision)
+        return render (request,"appproyecto/resultadobusqueda.html", {"cursos":cursos, "comision":comision})
+
+    else:
+          respuesta = "No se enviaron datos con esas caracteristicas"
+          return HttpResponse (respuesta)
+

@@ -4,8 +4,20 @@
 
     <!--HOLA QUE TAL CAMBIE TODO -->
     <h1>Pagina de cursos.</h1>
-    <p>visualizacion de la informacion de los cursos</P>
+    <p> Acceso al formulario de los cursos</P>
 
-    <h3>no hay informacion adicional</h3>
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="btn bootstrap-icons" href="{% url 'cursoFormulario' %}">Formulario </a>
+            </div>
+        </nav>
+
+    <p>Acceso a la busqueda de los tipos de Cursos</p>
+
+    <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="btn bg-light" href="{% url 'buscarInfo' %}">Buscar</a>
+            </div>
+        </nav>
 
     {% endblock %}

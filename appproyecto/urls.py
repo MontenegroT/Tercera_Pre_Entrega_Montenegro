@@ -11,4 +11,6 @@ urlpatterns = [
     path('profesoresform/', views.profesoresform, name="profesoresform"),
     path('alumnosform/', views.alumnosform, name="alumnosform"),
     path('actividadesform/', views.actividadform, name="actividadesform"),
+    path('buscarInfo/', views.buscarInfo, name="buscarInfo"),
+    path('buscar/', views.buscar)
 ]

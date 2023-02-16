@@ -3,9 +3,14 @@
 {% block contenidoQueCambia %}
 
     <!--HOLA QUE TAL CAMBIE TODO -->
-    <h1>Pagina de Alumnos.</h1>
-    <p>visualizacion de la informacion de los Alumnos</P>
 
-    <h3>no hay informacion adicional</h3>
+    <h1>Pagina de Alumnos.</h1>
+    <p>Acceda al Formulario de alumnos</P>
+
+        <nav class="navbar navbar-light bg-light static-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'alumnosform' %}">Formulario</a>
+            </div>
+        </nav>
 
     {% endblock %}
