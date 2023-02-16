@@ -6,19 +6,19 @@ class CursoFormulario(forms.Form):
     duracion=forms.IntegerField()
     comision=forms.IntegerField()
 
-class Profesores(forms.Form):
+class ProfesoresForm(forms.Form):
     nombre=forms.CharField(max_length=30)
     correo=forms.EmailField()
     profesion=forms.CharField(max_length=30)
     cursos_asignados=forms.IntegerField()
 
-class Alumnos(forms.Form):
+class AlumnoForm(forms.Form):
      nombre=forms.CharField(max_length=30)
      documento=forms.IntegerField()
      correo=forms.EmailField()
      cursos_inscripto=forms.IntegerField()
 
-class Actividades(forms.Form):
+class ActividadForm(forms.Form):
     tipo=forms.CharField(max_length=30)
     fecha_inicio=forms.IntegerField()
     fecha_entrega=forms.IntegerField()

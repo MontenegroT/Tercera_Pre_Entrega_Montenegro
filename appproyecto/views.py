@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from appproyecto.models import *
-from appproyecto.forms import CursoFormulario
+from appproyecto.forms import *
 # Create your views here.
 
 def inicio(request):
@@ -32,3 +32,17 @@ def cursoFormulario(request):
         miFormulario = CursoFormulario()
 
     return render(request,'appproyecto/cursoFormulario.html', {"miFormulario":miFormulario})
+
+def profesoresform(request):
+    if request.method == 'POST':
+        miFormulario = ProfesoresForm(request.POST)
+        print(miFormulario)
+        if miFormulario.is_valid:
+            datos = miFormulario.cleaned_data
+            profesor=Profesores( nombre=datos['nombnre'], correo=datos['correo'], profesion=datos['profesion'], comisioncursos_asignados=datos['cursos_asignados'])
+            profesor.save()
+            return render(request,'appproyecto/Inicio.html')
+    else:
+        miFormulario = ProfesoresForm()
+
+    return render(request,'appproyecto/profesoresform.html', {"miFormulario":miFormulario})
